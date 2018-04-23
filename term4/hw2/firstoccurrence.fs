@@ -1,5 +1,5 @@
 ﻿// Task 2.2 - First Occurrence
-let firstocc n ls =
+let firstOcc n ls =
     let rec index n ls i =
         if ls |> List.head = n
             then Some(i)
