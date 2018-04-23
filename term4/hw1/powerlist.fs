@@ -1,8 +1,8 @@
 ﻿// Task 1.4 - Power List
 let powers n m =
-    let rec gennext count next =
+    let rec genNext count next =
         match count with
         | _ when count < 0 -> []
-        | _ -> next :: gennext (count - 1) (2 * next)
-    gennext m (pown 2 n)
+        | _ -> next :: genNext (count - 1) (2 * next)
+    genNext m (pown 2 n)
 
