@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tasks5", "Tasks5\Tasks5.fsproj", "{C0B9ECE6-3CF9-4F71-B255-363DA3D323AA}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tests5", "Tests5\Tests5.fsproj", "{259B020E-052E-4F00-A9BC-1FDC45D63FF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0B9ECE6-3CF9-4F71-B255-363DA3D323AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0B9ECE6-3CF9-4F71-B255-363DA3D323AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0B9ECE6-3CF9-4F71-B255-363DA3D323AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0B9ECE6-3CF9-4F71-B255-363DA3D323AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{259B020E-052E-4F00-A9BC-1FDC45D63FF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{259B020E-052E-4F00-A9BC-1FDC45D63FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{259B020E-052E-4F00-A9BC-1FDC45D63FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{259B020E-052E-4F00-A9BC-1FDC45D63FF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
