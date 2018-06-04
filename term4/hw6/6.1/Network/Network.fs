@@ -48,7 +48,7 @@ type Network(computersInfo: List<Computer * int * List<int>>) =
     /// </summary>   
     member this.SpreadInfection () =
         for comp in this.Computers do
-            comp.AttackWithInfections()
+            comp.AttackWithInfections this.InfectedComputers      
         StepsCount <- StepsCount + 1
     
     /// <summary>

@@ -71,6 +71,16 @@ type Computer(computerOS: OpSystem, connectedTo: List<Computer>, name:string) =
             this.Infected <- true
     
     /// <summary>
+    /// Attacks computer with only viruses the given list of computers has
+    /// </summary>
+    /// <param name="from"> Computers trying to infect this one </param>
+    member this.AttackWithInfections from =
+        if (_Connected |> List.filter(fun comp -> comp.Infected && from |> List.contains comp) |> List.isEmpty |> not && not (_OS.CanDefend())) then
+            this.Infected <- true
+
+
+
+    /// <summary>
     /// Infects the computer independently of operational system defending level
     /// </summary>
     member this.ForceInfect () =
