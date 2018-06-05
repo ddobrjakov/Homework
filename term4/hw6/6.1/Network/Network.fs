@@ -47,8 +47,9 @@ type Network(computersInfo: List<Computer * int * List<int>>) =
     /// Attempts to attack all the computers
     /// </summary>   
     member this.SpreadInfection () =
+        let InfectedAtTheMoment = this.InfectedComputers
         for comp in this.Computers do
-            comp.AttackWithInfections this.InfectedComputers      
+            comp.AttackWithInfections InfectedAtTheMoment
         stepsCount <- stepsCount + 1
     
     /// <summary>
