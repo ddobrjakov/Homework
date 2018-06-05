@@ -44,19 +44,19 @@ module ``Even count functions tests`` =
     (* Task 3.2 *)
 [<Test>]
 let ``Only one node``() = 
-    treeMap (Tip(3), fun x -> x * 53) |> should equal <| Tip(159)
+    treeMap (Tip(3)) (fun x -> x * 53) |> should equal <| Tip(159)
 
 [<Test>]
 let ``x + 1``() =
-    treeMap (Node(1, Node(2, Tip(3), Tip(4)), Node(5, Tip(6), Tip(7))), fun x -> x + 1) |> should equal <| Node(2, Node(3, Tip(4), Tip(5)), Node(6, Tip(7), Tip(8)))
+    treeMap (Node(1, Node(2, Tip(3), Tip(4)), Node(5, Tip(6), Tip(7)))) (fun x -> x + 1) |> should equal <| Node(2, Node(3, Tip(4), Tip(5)), Node(6, Tip(7), Tip(8)))
 
 [<Test>]
 let ``x % 3``() =
-    treeMap (Node(5, Node(2, Tip(0), Tip(4)), Node(5, Tip(6), Tip(7))), fun x -> x % 3) |> should equal <| Node(2, Node(2, Tip(0), Tip(1)), Node(2, Tip(0), Tip(1)))
+    treeMap (Node(5, Node(2, Tip(0), Tip(4)), Node(5, Tip(6), Tip(7)))) (fun x -> x % 3) |> should equal <| Node(2, Node(2, Tip(0), Tip(1)), Node(2, Tip(0), Tip(1)))
 
 [<Test>]
 let ``x ^ 2``() =
-    treeMap (Node(1, Node(0, Tip(3), Tip(4)), Tip(-7)), fun x -> x * x) 
+    treeMap (Node(1, Node(0, Tip(3), Tip(4)), Tip(-7))) (fun x -> x * x) 
     |> should equal <| Node(1, Node(0, Tip(9), Tip(16)), Tip(49))
 
     (* Task 3.3 *)

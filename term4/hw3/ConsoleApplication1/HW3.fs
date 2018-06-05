@@ -17,9 +17,9 @@ module Task2 =
         | Tip of 'a
         | Node of 'a * Tree<'a> * Tree<'a>
 
-    let rec treeMap (tree:Tree<'a>, func) =
+    let rec treeMap (tree:Tree<'a>) func =
         match tree with
-        | Node(a, t1, t2) -> Node(func a, treeMap (t1, func), treeMap (t2, func))        
+        | Node(a, t1, t2) -> Node(func a, treeMap t1 func, treeMap t2 func)        
         | Tip(a) -> Tip(func(a))
 
 (* Task 3.3 *)
