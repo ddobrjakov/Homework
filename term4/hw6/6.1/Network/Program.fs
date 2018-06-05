@@ -6,29 +6,29 @@ open OpSystem
 
 [<EntryPoint>]
 let main argv = 
-    let WindowsDefTools = SimpleDefendingTools(0.1)
-    let WindowsOS = OpSystem("Windows", WindowsDefTools)
-    let GeorgeComputer = Computer(WindowsOS, "George-PC")
+    let windowsDefTools = SimpleDefendingTools(0.1)
+    let windowsOS = OpSystem("Windows", windowsDefTools)
+    let georgeComputer = Computer(windowsOS, "George-PC")
 
-    let LinuxDefTools = SimpleDefendingTools(0.4)
-    let LinuxOS = OpSystem("Linux", LinuxDefTools)
-    let PatrickComputer = Computer(LinuxOS, "Patrick-PC")
+    let linuxDefTools = SimpleDefendingTools(0.4)
+    let linuxOS = OpSystem("Linux", linuxDefTools)
+    let patrickComputer = Computer(linuxOS, "Patrick-PC")
 
-    let Computer3 = Computer(OpSystem("MacOs", SimpleDefendingTools(0.8)), "WellProtectedComp")
-    let Computer4 = Computer(OpSystem("MacOs", SimpleDefendingTools(0.9)), "VeryWellProtectedComp")
-    let Computer5 = Computer(OpSystem("WindowsXP", SimpleDefendingTools(0.05)))
+    let computer3 = Computer(OpSystem("MacOs", SimpleDefendingTools(0.8)), "WellProtectedComp")
+    let computer4 = Computer(OpSystem("MacOs", SimpleDefendingTools(0.9)), "VeryWellProtectedComp")
+    let computer5 = Computer(OpSystem("WindowsXP", SimpleDefendingTools(0.05)))
 
-    GeorgeComputer.ForceInfect()
+    georgeComputer.ForceInfect()
     let computersInfo =
         [
-            GeorgeComputer, 1, [2; 3];
-            PatrickComputer, 2, [1; 4];
-            Computer3, 3, [1];
-            Computer4, 4, [2];
-            Computer5, 5, [3] 
+            georgeComputer, 1, [2; 3];
+            patrickComputer, 2, [1; 4];
+            computer3, 3, [1];
+            computer4, 4, [2];
+            computer5, 5, [3] 
         ]
-    let Net = Network(computersInfo)
-    Net.Launch()
+    let net = Network(computersInfo)
+    net.Launch()
 
     System.Console.ReadKey() |> ignore
     0 // возвращение целочисленного кода выхода

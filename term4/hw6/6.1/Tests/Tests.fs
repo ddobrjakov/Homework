@@ -19,9 +19,9 @@ let ``Infected / Not Infected count test``() =
             Computer(OpSystem("MacOs", SimpleDefendingTools(0.9))), 4, [1; 2];
             Computer(OpSystem("WindowsXP", SimpleDefendingTools(0.05))), 5, [3] 
         ]
-    let Net = Network(computersInfo)
-    Net.InfectedComputers |> List.length |> should equal 1
-    Net.NotInfectedComputers |> List.length |> should equal 4
+    let net = Network(computersInfo)
+    net.InfectedComputers |> List.length |> should equal 1
+    net.NotInfectedComputers |> List.length |> should equal 4
 
 [<Test>]
 let ``Wrong connections``()=

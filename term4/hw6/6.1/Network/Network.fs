@@ -21,8 +21,8 @@ type Network(computersInfo: List<Computer * int * List<int>>) =
         computersInfo |> List.map (fun (comp, id, connections) -> comp)
 
     let mutable _Computers = parseCompsInfo computersInfo
-    let MaxStepsLimit = 500
-    let mutable StepsCount = 0
+    let maxStepsLimit = 500
+    let mutable stepsCount = 0
 
     /// <summary>
     /// Returns all computers in network
@@ -49,7 +49,7 @@ type Network(computersInfo: List<Computer * int * List<int>>) =
     member this.SpreadInfection () =
         for comp in this.Computers do
             comp.AttackWithInfections this.InfectedComputers      
-        StepsCount <- StepsCount + 1
+        stepsCount <- stepsCount + 1
     
     /// <summary>
     /// Returns string representation of current network state
@@ -68,21 +68,20 @@ type Network(computersInfo: List<Computer * int * List<int>>) =
     member this.Launch() =
         if (this.InfectedComputers |> List.isEmpty) then 
             printfn "%s" "Can't launch infecting process: no computers are infected. Try to infect at least one computer first"
-        else
-        
-        Console.ForegroundColor <- ConsoleColor.Red
-        printfn "%s" "Infecting process started...\n"
-        Console.ResetColor()
-
-        printfn "%s" <| this.GetStatus() + "\n"
-        this.Continue()
+        else        
+            Console.ForegroundColor <- ConsoleColor.Red
+            printfn "%s" "Infecting process started...\n"
+            Console.ResetColor()
+    
+            printfn "%s" <| this.GetStatus() + "\n"
+            this.Continue()
 
         
     member private this.Continue () =
         if (this.NotInfectedComputers |> List.isEmpty) then
             printfn "%s" "Finished. All computers infected."
         else
-            if (StepsCount > MaxStepsLimit) then
+            if (stepsCount > maxStepsLimit) then
                 printfn "%s" "Reached limit of steps allowed. Finished."
             else
                 this.SpreadInfection()
