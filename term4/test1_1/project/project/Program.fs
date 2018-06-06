@@ -7,6 +7,8 @@ open Task3
 let main argv = 
     printfn "%A" argv
 
+
+    
     System.Console.ReadKey() |> ignore
     0 // возвращение целочисленного кода выхода
 
